@@ -1,0 +1,6 @@
+{
+  "name": "প্রশ্নপত্র জেনারেটর - Question Paper Generator",
+  "description": "একটি আধুনিক বাংলা প্রশ্নপত্র জেনারেটর ও মুদ্রণ প্ল্যাটফর্ম। সৃজনশীল (CQ), বহুনির্বাচনী (MCQ), সংক্ষিপ্ত প্রশ্ন ও এআই সহায়তায় সহজে পরীক্ষার প্রশ্নপত্র তৈরি ও প্রিন্ট করুন।",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

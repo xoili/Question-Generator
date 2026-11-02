@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #e9efeb;
+  --panel: #fbfdfc;
+  --panel-2: #f0f5f2;
+  --stage: #d9e2dd;
+  --line: #cfd9d3;
+  --fg: #12231b;
+  --muted: #55675e;
+  --accent: #006a4e;
+  --accent-fg: #ffffff;
+  --accent-soft: #d6ece3;
+  --warn: #8a4b00;
+  --warn-soft: #fbe9c8;
+  --ok: #0b6b3f;
+  --ok-soft: #d4efdf;
+  --ink: #111111;
+  --paper: #ffffff;
+  --edit-hover: rgba(0, 106, 78, 0.08);
+  --edit-line: rgba(0, 106, 78, 0.55);
+  --ph: #fff1c2;
+  --shadow: 0 1px 3px rgba(10, 30, 20, 0.08), 0 8px 24px rgba(10, 30, 20, 0.12);
+  --font-ui: 'Hind Siliguri', 'Noto Sans Bengali', system-ui, sans-serif;
+  --font-paper: 'Noto Serif Bengali', 'SolaimanLipi', 'Kalpurush', serif;
+}
+
+body {
+  font-family: var(--font-ui);
+  background-color: var(--bg);
+  color: var(--fg);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.font-paper {
+  font-family: var(--font-paper);
+}
+
+.font-ui {
+  font-family: var(--font-ui);
+}
+
+/* Custom scrollbar for desktop UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 106, 78, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 106, 78, 0.45);
+}
+
+/* Sheet editable inline elements */
+.paper-editable {
+  position: relative;
+  transition: all 0.15s ease-in-out;
+  border-radius: 2px;
+  padding: 1px 3px;
+  margin: -1px -3px;
+  cursor: text;
+}
+.paper-editable:hover {
+  background-color: var(--edit-hover);
+  outline: 1px dashed var(--edit-line);
+}
+.paper-editable:focus {
+  background-color: #ffffff;
+  outline: 2px solid var(--accent);
+  box-shadow: 0 0 0 2px rgba(0, 106, 78, 0.15);
+}
+
+/* Authentic Bengali exam paper styling */
+.exam-paper {
+  font-family: var(--font-paper);
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  position: relative;
+}
+
+/* Print specific styles */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 14mm 14mm 14mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .exam-paper-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+    width: 100% !important;
+    min-height: auto !important;
+  }
+
+  .exam-paper {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    color: #000000 !important;
+    background: #ffffff !important;
+  }
+
+  .paper-editable:hover,
+  .paper-editable:focus {
+    background: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .question-item {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+    break-after: page;
+  }
+}
